@@ -7,11 +7,25 @@ function getTwitch(){
 			return link = "https://wind-bow.gomix.me/twitch-api/"+type+"/"+channel+"?callback=?";
 		};
   		$.getJSON(getLink("streams"), function (data) {
-			console.log(data);  
+			console.log(data); 
+			displayStreams(data); 
     	});
+    	
 	});
-
 };
+
+function displayStreams(item) {
+	var status;
+	switch(item.stream) {
+		case null:
+		status = "offline";
+		console.log(status);
+		break;
+		default:
+		status = "Online";
+		console.log(status);
+	}
+}
 
 $(document).ready(function() {
 	getTwitch();
