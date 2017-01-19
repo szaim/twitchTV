@@ -1,9 +1,12 @@
 
+body {
+    background-color: #f5f1f8;
+}
+
 .container {
     margin-left: 450px;
     margin-top: 60px;
 }
-
 
 .list-group-header {
     background-color: #6441a5;
@@ -52,14 +55,9 @@
     width: 14px;
     height: 14px;
     border-radius: 50px;
-    background: linear-gradient(to bottom, #cddc39, #cddc39);
     position: absolute;
     border: 2px solid white;
     top: 3px;
-}
-
-.disconnected {
-    background: linear-gradient(to bottom, #ef5350, #ef5350);
 }
 
 .name-channel {

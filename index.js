@@ -11,25 +11,21 @@ function getTwitch(){
 			displayStreams(data); 
     	});
   		$.getJSON(getLink("channels"), function (data) {
-			console.log(data); 
+  			console.log(data);
 			displayChannels(data);
     	});    	
 
 	});
 };
-
+var status;
 function displayStreams(item) {
-	var status;
-	switch(item.stream) {
-		case null:
-		status = "offline";
-		console.log(status);
-		break;
-		default:
-		status = "Online";
-		console.log(status);
+	if(item.stream === null) {
+		 status = "offline";
+	} else {
+		 status = "online";
 	}
 }
+
 var list = $('<li class="list-group-item row m-x-0 p-x-0"><div class="col-xs-4 avatar-frame"><img alt=""><div class="grad"></div></div><div class="col-xs-8 p-l-2"><h6 class="m-b-0 name-channel"></h6><p class="m-b-0 message"></p></div></li>');
 var listGroup = $(".list-group");
 
@@ -39,6 +35,12 @@ function displayChannels(item) {
 	current.find('img').attr("src", avatar);
 	current.find('h6').text(item.display_name);
 	current.find('.message').text(item.status);
+	if(status === "offline") {
+		current.find('.grad').css('background', 'linear-gradient(to bottom, #ef5350, #ef5350)');
+	}else {
+		current.find('.grad').css('background', 'linear-gradient(to bottom, #cddc39, #cddc39)');
+
+	}
 	listGroup.append(current);
 
 }
