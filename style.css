@@ -22,21 +22,24 @@ body {
 }
 
 .btn-circle.btn-lg {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     padding: 12px 15px;
     font-size: 18px;
     line-height: 1.33;
     border-radius: 25px;
     position: relative;
     z-index: 1;
-    top: 8px;
-    background-color: #ffc107;
+    top: 11px;
+    background-color: #ef5350;
     box-shadow: 0px 1px 3px #b58905;
 }
 
-.fa.fa-plus {
-    font-size: 20px;
+.span-button {
+    font-size: 12px;
+    position: relative;
+    bottom: 8px;
+    right: 16px;
 }
 
 .avatar-frame,

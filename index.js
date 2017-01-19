@@ -26,12 +26,13 @@ function displayStreams(item) {
 	}
 }
 
-var list = $('<li class="list-group-item row m-x-0 p-x-0"><div class="col-xs-4 avatar-frame"><img alt=""><div class="grad"></div></div><div class="col-xs-8 p-l-2"><h6 class="m-b-0 name-channel"></h6><p class="m-b-0 message"></p></div></li>');
+var list = $('<li class="list-group-item row m-x-0 p-x-0 "><div class="col-xs-4 avatar-frame"><img alt=""><div class="grad"></div></div><div class="col-xs-8 p-l-2"><h6 class="m-b-0 name-channel"></h6><p class="m-b-0 message"></p></div></li>');
 var listGroup = $(".list-group");
 
 function displayChannels(item) {
 	var avatar = item.logo;
 	var current = list.clone();
+	current.addClass(status);
 	current.find('img').attr("src", avatar);
 	current.find('h6').text(item.display_name);
 	current.find('.message').text(item.status);
@@ -47,5 +48,12 @@ function displayChannels(item) {
 
 $(document).ready(function() {
 	getTwitch();
+	$('.btn').click(function(e) {
+		e.preventDefault();
+		var status = $(this).attr('id');
+		if(status === "offline") {
+			$('.online').remove();
+		} 
+	})
 });
 
