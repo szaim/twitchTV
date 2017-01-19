@@ -1,0 +1,81 @@
+
+.container {
+    margin-left: 450px;
+    margin-top: 60px;
+}
+
+
+.list-group-header {
+    background-color: #6441a5;
+    color: #e4eef7;
+}
+
+.channel-span {
+    font-size: small;
+}
+
+.list-channels li:nth-child(2) {
+    border-left: 5px solid #ef5350;
+}
+
+.btn-circle.btn-lg {
+    width: 45px;
+    height: 45px;
+    padding: 12px 15px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    top: 8px;
+    background-color: #ffc107;
+    box-shadow: 0px 1px 3px #b58905;
+}
+
+.fa.fa-plus {
+    font-size: 20px;
+}
+
+.avatar-frame,
+.avatar-frame img {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 30px;
+    /* Saf3+, Chrome */
+    border-radius: 30px;
+    /* Opera 10.5, IE 9 */
+    /*-moz-border-radius: 30px;  Disabled for FF1+ */
+    margin-top: 2px;
+}
+
+.grad {
+    width: 14px;
+    height: 14px;
+    border-radius: 50px;
+    background: linear-gradient(to bottom, #cddc39, #cddc39);
+    position: absolute;
+    border: 2px solid white;
+    top: 3px;
+}
+
+.disconnected {
+    background: linear-gradient(to bottom, #ef5350, #ef5350);
+}
+
+.name-channel {
+    text-transform: capitalize;
+    color: #4d4d4d;
+}
+
+.message {
+    font-size: small;
+}
+.message,
+.percent-of-study {
+    color: #818181;
+}
+
+.notification {
+    font-size: smaller;
+    color: #c8c8c8;
+}
