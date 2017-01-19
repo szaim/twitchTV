@@ -1,5 +1,5 @@
 
-var channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp"];
+var channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
 function getTwitch(){
 	channels.forEach(function(channel) {
@@ -26,7 +26,7 @@ function displayStreams(item) {
 	}
 }
 
-var list = $('<li class="list-group-item row m-x-0 p-x-0 "><div class="col-xs-4 avatar-frame"><img alt=""><div class="grad"></div></div><div class="col-xs-8 p-l-2"><h6 class="m-b-0 name-channel"></h6><p class="m-b-0 message"></p></div></li>');
+var list = $('<li class="list-group-item row m-x-0 p-x-0 "><div class="col-xs-4 avatar-frame"><img alt=""><div class="grad"></div></div><div class="col-xs-8 p-l-2"><h6 class="m-b-0 name-channel"></h6><p class="m-b-0 message"></p><a target="_blank"></a></div></li>');
 var listGroup = $(".list-group");
 
 function displayChannels(item) {
@@ -36,12 +36,13 @@ function displayChannels(item) {
 	current.find('img').attr("src", avatar);
 	current.find('h6').text(item.display_name);
 	current.find('.message').text(item.status);
+	current.find('a').attr("href", item.url).text('Check Channel')
 	if(status === "offline") {
 		current.find('.grad').css('background', 'linear-gradient(to bottom, #ef5350, #ef5350)');
 	}else {
 		current.find('.grad').css('background', 'linear-gradient(to bottom, #cddc39, #cddc39)');
-
 	}
+
 	listGroup.append(current);
 
 }
@@ -51,8 +52,15 @@ $(document).ready(function() {
 	$('.btn').click(function(e) {
 		e.preventDefault();
 		var status = $(this).attr('id');
-		if(status === "offline") {
-			$('.online').remove();
+		if(status === "all") {
+			$('.offline').removeClass('hidden');
+			$('.online').removeClass('hidden');			
+		}else if(status === "online") {
+			$('.offline').addClass('hidden');
+			$('.online').removeClass('hidden');
+		}else if(status === "offline") {
+			$('.online').addClass('hidden');
+			$('.offline').removeClass('hidden');
 		} 
 	})
 });
